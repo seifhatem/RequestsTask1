@@ -17,14 +17,19 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func fetchDogPhotoTapped(_ sender: Any) {
-         getRandomDogUrl()
+
+    
+    @IBAction func fetchSwiftLogoTapped(_ sender: Any) {
+        fetchImageAndDisplay(URLString: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/40px-Swift_logo.svg.png")
     }
     
+    @IBAction func fetchDogImageTapped(_ sender: Any) {
+         getRandomDogImage()
+    }
     
 
     
-    func getRandomDogUrl(){
+    func getRandomDogImage(){
         let url = URL(string: "https://dog.ceo/api/breeds/image/random")
 
         let randomImageTask = URLSession.shared.dataTask(with: url!) {data, httpresponse, error in
@@ -39,7 +44,7 @@ class HomeViewController: UIViewController {
                  if let responseJSON = responseJSON as? [String: Any] {
                     let imageLink = self.parseDogLink(jsonData: responseJSON)
                     if let imageLink = imageLink {
-                        self.fetchDogImageAndDisplay(imageURL: imageLink)
+                        self.fetchImageAndDisplay(URLString: imageLink)
                     }
                         else{
                             print("Couldn't parse image url")
@@ -59,13 +64,14 @@ class HomeViewController: UIViewController {
 
     }
     
-    func fetchDogImageAndDisplay(imageURL: String){
-            let url = URL(string: imageURL)
+
+    func fetchImageAndDisplay(URLString: String){
+            let url = URL(string: URLString)
 
             let dogImageTask = URLSession.shared.dataTask(with: url!) {data, httpresponse, error in
-                print("Fetch dog image request completed")
+                print("Fetch image request completed")
                 if let error = error{
-                    print("Fetch Dog Image Error: ",error.localizedDescription)
+                    print("Fetch Image Error: ",error.localizedDescription)
                     return
                 }
 
@@ -80,7 +86,7 @@ class HomeViewController: UIViewController {
             }
 
             dogImageTask.resume()
-            print("Fetch dog image requested")
+            print("Fetch image requested")
     }
     
     func parseDogLink(jsonData: [String: Any]) -> String?{
