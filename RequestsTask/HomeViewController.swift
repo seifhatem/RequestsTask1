@@ -30,14 +30,12 @@ class HomeViewController: UIViewController {
     
     
     func getRandomDogImage(){
-        //let url = URL(string: "https://dog.ceo/api/breeds/image/random")
-        let url = URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/40px-Swift_logo.svg.png")
-        
+        let url = URL(string: "https://dog.ceo/api/breeds/image/random")
         
         let randomImageTask = URLSession.shared.dataTask(with: url!) {data, httpresponse, error in
             print("Fetch dog link request completed")
             if let error = error{
-                print("Fetch Dog Link Error: ",error.localizedDescription)
+                self.displayErrorAlert("Fetch Dog Link Error: " + error.localizedDescription)
                 return
             }
             
@@ -47,14 +45,14 @@ class HomeViewController: UIViewController {
                     let imageLink = self.parseDogLink(jsonData: responseJSON)
                     if let imageLink = imageLink {
                         self.fetchImageAndDisplay(URLString: imageLink)
-                    }    
+                    }
                 }
                 else{
-                    print("Couldn't parse image url")
+                     self.displayErrorAlert("Couldn't parse image url")
                     return
                 }
             } else{
-                print("Returned data is nil")
+                 self.displayErrorAlert("Returned data is nil")
                 return
             }
             
@@ -72,7 +70,7 @@ class HomeViewController: UIViewController {
         let dogImageTask = URLSession.shared.dataTask(with: url!) {data, httpresponse, error in
             print("Fetch image request completed")
             if let error = error{
-                print("Fetch Image Error: ",error.localizedDescription)
+               self.displayErrorAlert("Fetch Image Error: " + error.localizedDescription)
                 return
             }
             
@@ -80,7 +78,7 @@ class HomeViewController: UIViewController {
                 DispatchQueue.main.async {self.imageView.image = UIImage.init(data: data)}
                 
             } else{
-                print("Returned data is nil")
+                self.displayErrorAlert("Returned data is nil")
                 return
             }
             
@@ -95,6 +93,14 @@ class HomeViewController: UIViewController {
             return dogLink
         }
         return nil
+    }
+    
+    func displayErrorAlert(_ message: String){
+        DispatchQueue.main.async {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+        }
     }
     
     /*
