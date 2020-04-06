@@ -22,14 +22,14 @@
                                 <rect key="frame" x="20" y="433" width="374" height="30"/>
                                 <state key="normal" title="Fetch Dog Image"/>
                                 <connections>
-                                    <action selector="fetchDogPhotoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dnb-7O-VFO"/>
+                                    <action selector="fetchDogImageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dnb-7O-VFO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihG-bC-VuR">
                                 <rect key="frame" x="20" y="473" width="374" height="30"/>
                                 <state key="normal" title="Fetch Swift Logo"/>
                                 <connections>
-                                    <action selector="fetchDogPhotoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vom-g0-Hhw"/>
+                                    <action selector="fetchSwiftLogoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yXk-JD-REY"/>
                                 </connections>
                             </button>
                         </subviews>
