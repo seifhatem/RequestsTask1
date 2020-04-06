@@ -20,14 +20,18 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func fetchSwiftLogoTapped(_ sender: Any) {
+        removeImageFromView()
         fetchImageAndDisplay(URLString: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/40px-Swift_logo.svg.png")
     }
     
     @IBAction func fetchDogImageTapped(_ sender: Any) {
+        removeImageFromView()
         getRandomDogImage()
     }
     
-    
+    func removeImageFromView(){
+        imageView.image = UIImage.init()
+    }
     
     func getRandomDogImage(){
         let url = URL(string: "https://dog.ceo/api/breeds/image/random")
