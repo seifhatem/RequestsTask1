@@ -20,9 +20,16 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYe-J0-tcP">
                                 <rect key="frame" x="20" y="433" width="374" height="30"/>
-                                <state key="normal" title="Fetch Photo"/>
+                                <state key="normal" title="Fetch Dog Image"/>
                                 <connections>
                                     <action selector="fetchDogPhotoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dnb-7O-VFO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihG-bC-VuR">
+                                <rect key="frame" x="20" y="473" width="374" height="30"/>
+                                <state key="normal" title="Fetch Swift Logo"/>
+                                <connections>
+                                    <action selector="fetchDogPhotoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vom-g0-Hhw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -32,12 +39,18 @@
                             <constraint firstItem="FYe-J0-tcP" firstAttribute="top" secondItem="Mlw-HO-yQw" secondAttribute="bottom" constant="70" id="ADG-nS-kTR"/>
                             <constraint firstItem="Mlw-HO-yQw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SVr-oX-AQT"/>
                             <constraint firstItem="Mlw-HO-yQw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.257812" id="Xdl-9p-UkO"/>
+                            <constraint firstItem="ihG-bC-VuR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0334821" id="bVF-Di-acb"/>
                             <constraint firstItem="FYe-J0-tcP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0334821" id="eda-EK-Fqe"/>
                             <constraint firstItem="FYe-J0-tcP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="fFR-OI-q2C"/>
                             <constraint firstItem="Mlw-HO-yQw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="hAH-rt-39b"/>
+                            <constraint firstItem="ihG-bC-VuR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iux-yi-DM8"/>
+                            <constraint firstItem="ihG-bC-VuR" firstAttribute="top" secondItem="FYe-J0-tcP" secondAttribute="bottom" constant="10" id="lcP-5N-Fvp"/>
                             <constraint firstItem="FYe-J0-tcP" firstAttribute="top" secondItem="Mlw-HO-yQw" secondAttribute="bottom" constant="70" id="lra-bg-BFX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihG-bC-VuR" secondAttribute="trailing" constant="20" id="opX-XI-q7x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mlw-HO-yQw" secondAttribute="trailing" constant="20" id="qYm-LC-ecu"/>
+                            <constraint firstItem="ihG-bC-VuR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="wHS-E6-gHR"/>
                             <constraint firstItem="FYe-J0-tcP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wHr-5b-iqw"/>
+                            <constraint firstItem="ihG-bC-VuR" firstAttribute="top" secondItem="FYe-J0-tcP" secondAttribute="bottom" constant="10" id="xXu-6c-WBx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
