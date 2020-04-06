@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     }
     
     func removeImageFromView(){
-        imageView.image = UIImage.init()
+        imageView.image = UIImage(systemName: "slowmo")
     }
     
     func getRandomDogImage(){
@@ -52,11 +52,11 @@ class HomeViewController: UIViewController {
                     }
                 }
                 else{
-                     self.displayErrorAlert("Couldn't parse image url")
+                    self.displayErrorAlert("Couldn't parse image url")
                     return
                 }
             } else{
-                 self.displayErrorAlert("Returned data is nil")
+                self.displayErrorAlert("Returned data is nil")
                 return
             }
             
@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
         let dogImageTask = URLSession.shared.dataTask(with: url!) {data, httpresponse, error in
             print("Fetch image request completed")
             if let error = error{
-               self.displayErrorAlert("Fetch Image Error: " + error.localizedDescription)
+                self.displayErrorAlert("Fetch Image Error: " + error.localizedDescription)
                 return
             }
             
@@ -101,9 +101,9 @@ class HomeViewController: UIViewController {
     
     func displayErrorAlert(_ message: String){
         DispatchQueue.main.async {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true)
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
     }
     
